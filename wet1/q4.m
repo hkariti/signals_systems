@@ -31,5 +31,10 @@ plot(t, f2, 'g');
 f1_100 = sin(1*t1);
 f2_100 = sin(10.1*t1);
 % Calculate both inner product. We substitute delta_T/T0 = 1/N
-inner_product_100 = f1_100*f2_100' * 1/100;
-inner_product_10000 = f1*f2' * 1/10000;
+dt_100 = 2*pi/99;
+dt_10000 = 2*pi/9999;
+T0=2*pi;
+N_100 = round(T0/dt_100);
+N_10000 = round(T0/dt_10000);
+inner_product_100 = f1_100*f2_100' / N_100;
+inner_product_10000 = f1*f2' / N_10000;

@@ -22,7 +22,9 @@ f3 = f1 + f2;
 figure;
 plot(t,f1,t,f2,t,f3); 
 legend('sin(\omega_1t)','sin(\omega_2t)','sin(\omega_1t)+sin(\omega_2t)');
-title('');
+title('Two sine signals and their sum');
+xlabel('Time');
+ylabel('Magnitude');
 
 
 % Multiple plots with subplot
@@ -30,19 +32,32 @@ figure(2);
 subplot(2,2,1);
 stem(t,f1); ylim([-2,2]); xlim([-2,2]);  ylim([-2,2]);
 legend('sin(\omega_1t)');
+title('Stem for sin(omega1*t)');
+xlabel('Time');
+ylabel('Magnitude');
+
 
 subplot(2,2,2); 
 plot(t,f2,'red','LineWidth',0.1); xlim([-2,2]); ylim([-2,2]);
 legend('sin(\omega_2t)');
+title("Plot for sin(omega2*t)");
+xlabel('Time');
+ylabel('Magnitude');
 
 subplot(2,2,3);
 plot(t,f3,'*','color','cyan'); 
 legend('sin(\omega_1t)+sin(\omega_2t)');
+title("Combined signals, drawn with *-s");
+xlabel("Time");
+ylabel("Magnitude");
 
 subplot(2,2,4);
 p = plot(t,f3, 'LineStyle' , ':' , 'color','magenta'); 
 p(1).LineWidth = 2;
 legend('sin(\omega_1t)+sin(\omega_2t)');
+title("Combined signals, drawn with :-s");
+xlabel("Time");
+ylabel("Magnitude");
 
 
 

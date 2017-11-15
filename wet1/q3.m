@@ -7,6 +7,10 @@ u = 2; v = -1; w = 1; % Specify direction points u,v,w
 
 quiver3(x,y,z,u,v,w); % Show 3D arrows in figure
 xlim([-2,2]); ylim([-2,2]); zlim([-2,2]);
+title("Vector (2,-1,-1) on x-y-z space");
+xlabel("X");
+ylabel("Y");
+zlabel("Z");
 hold all;  %This keeps all previous plots in the current figure when adding 
            %new data. It also uses different colors each time we add data 
            %to the figure.
@@ -38,14 +42,19 @@ unit_x = [ 1, 0, 0 ]';
 b1 = Rz * unit_x;
 b1 = b1 / sqrt(b1(1)^2 + b1(2)^2);
 quiver3(x, y, z, b1(1), b1(2), b1(3));
+title("Vector (2,-1,-1) and rotated (1,0,0) on x-y-z space");
 
 % Rotote unit vector -45 degrees around Z axis
 b2 = Rz' * unit_x;
 b2 = b2 / sqrt(b2(1)^2 + b2(2)^2);
 quiver3(x, y, z, b2(1), b2(2), b2(3));
+title("Vector (2,-1,-1) and two rotated versions of (1,0,0)");
 
 % Calcualte dot-prodoct of b1 and b2
 b1_cdot_b2 = dot(b1', b2');
 
 % Find the closest projection of our uvw vector on span{b1,b2}
-vec_projection = vec' * [ b1, b2 ]
+vec_projection_coeffs = vec' * [ b1, b2 ];
+vec_projection = vec_projection_coeffs * [b1, b2]';
+quiver3(x, y, z, vec_projection(1), vec_projection(2), vec_projection(3));
+title("Vector (2,-1,-1), b1, b2 and original vector's projection on them");
