@@ -16,7 +16,22 @@ function X = fourierTransform(x, w, t)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-X = % = ?;
+% Ensure vectors are columns
+x = x(:);
+w = w(:);
+t = t(:);
+
+%% Calculate matrix of PHIs
+% Get a matrix of the exponent part (column x row = matrix), each column is
+% a freq over time
+phis = 1j * t * transpose(w);
+% Now raise as a power of e
+phis = exp(phis);
+%% Get delta-t
+dt = t(2)-t(1);
+
+%% Calculate transform
+X = phis'*x*dt;
 
 
 end

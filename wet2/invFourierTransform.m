@@ -18,7 +18,7 @@ function x = invFourierTransform(X, w, t)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-x = % ? ;
+x = 1/(2*pi) * fourierTransform(X, -t, w);
 
 end
 
