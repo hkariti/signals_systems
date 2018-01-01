@@ -58,7 +58,7 @@ title("Bottom graph)");
 %% For automatic tests, do not change the structure of 'answers',
 % Only enter the following variables to the answers structure (fill the '?'):
 answers = struct();
-answers.x =  % ? ;
-answers.y =  % ? ;
-answers.z =  % ? ;
+answers.x =  x;
+answers.y =  y;
+answers.z =  z;
 
