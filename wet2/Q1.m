@@ -19,7 +19,7 @@ x = sin(3*pi*t) + 3*cos(9*pi*t);
 X = fourierTransform(x, w, t);
 x_inv = invFourierTransform(X, w, t);
 
-W = 18;
+W = 15;
 y = W/pi * Sinc(W*t);
 Y = fourierTransform(y, w, t);
 y_inv = invFourierTransform(Y, w, t);

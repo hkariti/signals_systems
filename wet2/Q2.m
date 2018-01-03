@@ -25,7 +25,6 @@ t = linspace(0,T_total,length(s));
 f = -1000 : 1000;
 S = fourierTransform(s, 2*pi * f, t);
 S_noisy = fourierTransform(s_noisy, 2*pi*f, t);
-
 % Plot original and noisy signals
 figure;
 subplot(3, 1, 1);
@@ -74,6 +73,6 @@ title("Bottom graph");
 answers = struct();
 answers.s 		 		 = s;
 answers.ht 				 = h ;
-answers.s_noise_filtered = y ;
+answers.s_noise_filtered = s_noise_filtered ;
 
 
